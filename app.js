@@ -1,10 +1,11 @@
 const express = require("express");
 const db = require("./config/db");
+const cors = require(cors);
 const barangRoutes = require("./routes/BarangRoutes");
 
 const app = express();
 const PORT = process.env.PORT;
-
+app.use(cors());
 app.use(express.json());
 app.use("/api/barang", barangRoutes);
 
